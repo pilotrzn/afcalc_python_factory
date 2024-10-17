@@ -5,6 +5,8 @@ from pack.calcconfiguration import CalcConfiguration
 
 
 class Calculator:
+    """_summary_
+    """
     def __init__(self) -> None:
         self.gas_fuel_calc = GasFuelComponentCalc()
         self.liquid_calc = None
@@ -12,7 +14,7 @@ class Calculator:
 
     def calculate(self, calc_object: CalcObject,
                   date_time: datetime, config: CalcConfiguration):
-        pass
+        self.gas_fuel_calc.calc(calc_object)
 
     def __main_calc(self, calc_object: CalcObject):
         pass

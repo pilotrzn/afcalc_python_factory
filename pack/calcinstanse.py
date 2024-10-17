@@ -1,10 +1,9 @@
-from pack.calcobjectfactory import CalcObjectFactory
+from .calcobjectfactory import CalcObjectFactory
 from pack.calculator import Calculator
 from pack.calcconfiguration import CalcConfiguration
 from pack.calcobject import CalcObject
 from datetime import datetime
 from pack.af_elements import create_struct
-# from pack.calcobject import CalcObject
 
 
 CHECK = False
@@ -13,6 +12,7 @@ CHECK = False
 class CalcInstance():
     def __init__(self, calc_object_factory: CalcObjectFactory,
                  calculator: Calculator) -> None:
+        self.af_struct = create_struct()
         self.config = CalcConfiguration().initialize()
         self.calc_object_factory = calc_object_factory
         self.calculator = calculator
@@ -20,7 +20,6 @@ class CalcInstance():
         self.pisystems = None
         self.pisystem = None
         self.afdatabase = None
-        self.af_struct = create_struct()
 
     def initialize(self):
         self.__connect()

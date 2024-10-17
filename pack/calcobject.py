@@ -1,4 +1,6 @@
-from pack.cls_af import AFAttribute, AFElement, AFTime
+from afsdk.af_attribute import AFAttribute
+from afsdk.af_element import AFElement
+from afsdk.af_time import AFTime
 # from datetime import datetime
 
 

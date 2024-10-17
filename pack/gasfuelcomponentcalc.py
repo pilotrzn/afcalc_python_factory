@@ -1,19 +1,21 @@
-from pack.typed_dict import DictStrFloat
 from pack.calcobject import CalcObject
 
 
 class GasFuelComponentCalc:
-    u1: DictStrFloat
-    u2: DictStrFloat
-    dict_m: DictStrFloat
-    dict_vars: DictStrFloat
-
     def __init__(self) -> None:
-        pass
+        self.u1: dict[str, float] = {}
+        self.u2: dict[str, float] = {}
+        self.dict_m: dict[str, float] = {}
+        self.dict_vars: dict[str, float] = {}
+        self.dict_c1: dict[str, float] = {}
+        self.dict_c2: dict[str, float] = {}
+        self.dict_w1: dict[str, float] = {}
+        self.dict_w2: dict[str, float] = {}
+        self.dict_vur: dict[str, float] = {}
 
     def calc(self, calc_object: CalcObject):
         for element in calc_object.gas_fuel_elements:
-            print(element)
+            print(type(element))
 
     def calc_vars(self):
         pass
